@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 
 ACTIVE_QUESTION_INFO = None  # текущий активный вопрос, один на всех
 VOTED_INFO = set()  # информация о том, кто из пользователей проголосовал за какой из вопросов
-# TODO: хранить VOTED_INFO в БД
 
 
 def start(bot, update):
@@ -30,7 +29,6 @@ def error(bot, update, error):
 
 
 def refresh_handler(bot, update):
-    # TODO: кешировать, чтобы не было по хиту в АПИ на каждое нажатие "обновить"
     active_question = fetch_active_question_info(add_random_emoji=True)
     global ACTIVE_QUESTION_INFO
     ACTIVE_QUESTION_INFO = active_question

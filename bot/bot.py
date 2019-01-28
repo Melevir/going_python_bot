@@ -24,7 +24,7 @@ def start_bot(bot):
 if __name__ == '__main__':
     bot = setup_bot(
         handlers=[
-            CommandHandler("start", start),
+            CommandHandler('start', start),
             MessageHandler(SpecificTextHandler(config.REFRESH_BUTTON_TEXT), refresh_handler),
             MessageHandler(Filters.text, vote_handler),
         ],
